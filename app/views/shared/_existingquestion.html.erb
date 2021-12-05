@@ -1,0 +1,11 @@
+  <div class="card">
+    <div class="card-header">
+      <%= existingquestion.title %>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"><%= existingquestion.content %></h4>
+      <% Answer.where(question_id: existingquestion.id).each do |a| %>
+        <p class="card-subtitle mb-2 text-muted"><%= a.content %></p>
+      <% end %>
+    </div>
+  </div>

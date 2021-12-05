@@ -1,0 +1,20 @@
+<div class="container" style="display:grid; justify-items:center">
+  <div class="row justify-content-md-center logo" >
+    <%= image_tag "logo.png", alt: "Logo FastDem", width: 250%>
+  </div>
+
+  <div class="row justify-content-md-center headline insetshadow"> Online Vote made simple.</div>
+
+
+  <div class="card-home-page">
+    <div style="margin-bottom: 25px; font-family:'Josefin Sans'; font-size: 20px"> FastDemocracy is a vote tool designed to save you some time and allow you to keep private data really private, as it should always be (wink wink Mark Z. 😘 )</div>
+
+
+    <div style="font-family:'Josefin Sans'; font-size: 20px">Please keep in mind the results of your vote will be deleted 24h after it is completed. 😎</div>
+  </div>
+
+
+  <div class="row justify-content-md-center" style="margin-bottom:150px">
+    <button type="button" class="btn btn-primary btn-lg"><%= link_to "Start", polls_path, method: :post, class: "btn" %></button>
+  </div>
+</div>

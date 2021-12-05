@@ -1,0 +1,9 @@
+<p><%= @poll.status %></p>
+<% if @poll.status == "pending" %>
+  <%= render partial: "shared/existingquestion", collection: @existingquestions %>
+
+  <%= render partial: "shared/newquestion", locals: {question: @question} %>
+  <%= link_to "next step", questions_done_path(@poll), method: :patch %>
+<% elsif @poll.status == "questions_done" %>
+  <h2>TEST</h2>
+<% end %>
