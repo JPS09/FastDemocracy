@@ -6,9 +6,14 @@ class VotersController < ApplicationController
     @poll = Poll.find(params[:poll_id])
     emails_list = params[:voters]
     emails_list.each do |email|
-      Voter.new(poll_id: @poll.id, email: email).save!
+      unless email.empty?
+      voter = Voter.new(poll_id: @poll.id, email: email)
+      voter.regenerate_token
+      voter.save!
       call_for_votes(email)
+      end
     end
+    @poll.status = "sent"
     redirect_to poll_path(@poll)
     # AFAIK, the raise showed that the voters were perfectly created with the correct poll_id and the correct email. Yay !
   end
