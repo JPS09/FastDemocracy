@@ -1,9 +1,9 @@
 class ContactsController < ApplicationController
-  before_action :new_contact, only: [:new, :create]
   before_action :find_contact, only: [:update, :show]
 
   def new
     @user = current_user
+    @contact = Contact.new
   end
 
   def index
@@ -11,7 +11,9 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact.save
+    @contact = Contact.new(contact_params)
+    @contact.user = current_user
+    @contact.save!
   end
 
   def update
@@ -25,12 +27,10 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:email, :first_name, :last_name, :user_id)
+    params.require(:contact).permit(:email, :first_name, :last_name)
   end
 
-  def new_contact
-    @contact = Contact.new(contact_params)
-  end
+
 
   def find_contact
     @contact = Contact.find(params[:id])
