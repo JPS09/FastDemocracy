@@ -2,8 +2,7 @@ class OpinionsController < ApplicationController
   before_action :validate_voter, only: :new
 
   def new
-    @poll = params[:poll_id]
-    @opinion = Opinion.new
+    @poll = Poll.find(params[:poll_id])
     @questions = @poll.questions
   end
 
