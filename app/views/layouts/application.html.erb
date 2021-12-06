@@ -15,10 +15,20 @@
   </head>
 
   <body>
-    <% unless params[:controller] == 'pages' %>
-      <%= render 'shared/navbar' %>
-    <% end %>
-    <%= yield %>
-    <%= render 'shared/flashes' %>
+    <div class="container">
+      <div class="row-2">
+        <%# displays navbar whenever you're not calling the pages (homepage) controller %>
+        <% unless params[:controller] == 'pages' %>
+          <%= render 'shared/navbar' %>
+        <% end %>
+      </div>
+      <div class="row-8 flex-grow-1">
+        <%= yield %>
+      </div>
+      <div class="row-2">
+        <%# insérer la navbar ici %>
+      </div>
+      <%= render 'shared/flashes' %>
+    </div>
   </body>
 </html>

@@ -1,5 +1,8 @@
-<div class="container-page">
-  <p><%= @poll.status %></p>
+  <%# the following line is here for test purposes only, remember to remove it before ultimate push in prod %>
+  <div class="row">
+    <p style="color:green"><%= @poll.status %></p>
+  </div>
+
   <% if @poll.status == "pending" %>
     <div class="container-cards">
       <%= render partial: "shared/existingquestion", collection: @existingquestions %>
@@ -15,4 +18,3 @@
   <% elsif @poll.status == "ongoing" %>
     <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
   <% end %>
-</div>

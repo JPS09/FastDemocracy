@@ -26,6 +26,10 @@ class PollsController < ApplicationController
 
   def create
     @poll = Poll.create(user: current_user, status: "pending")
+    @poll.expiry_date = Time.now + 3.hours
+    @poll.deletion_date = @poll.expiry_date + 5.minutes
+    # by default, a user can create a poll and manage it during 3 hours.
+    # Past this deadline, it is to be destroyed 5 minutes later.
     redirect_to new_poll_path(@poll)
   end
 
