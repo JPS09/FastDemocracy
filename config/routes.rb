@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   # post 'contacts', to: 'contacts#create'
   # post 'contact_list', to: 'contact_list#create'
 
+=======
+
+  get '/polls/:poll_id/vote/:token', to: 'opinions#new'
+  post '/polls/:poll_id/vote/:token', to: 'opinions#create'
 end
