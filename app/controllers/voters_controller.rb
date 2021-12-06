@@ -19,8 +19,6 @@ class VotersController < ApplicationController
     # AFAIK, the raise showed that the voters were perfectly created with the correct poll_id and the correct email. Yay !
   end
 
-  call_for_vote_email = "Hi there ! Your input is requested. Please click this link and vote : http://fastdemocracy.herokuapp.com/#{@poll.id}/vote/#{voter.token} ."
-
 
   def call_for_votes(voter)
     RestClient.post "https://api:#{ENV['MAILGUN_API_KEY']}"\
@@ -28,7 +26,8 @@ class VotersController < ApplicationController
     :from => "FastDemocracy <mailgun@fastdemocracy.me>",
     :to => "#{voter.email}",
     :subject => "You've been called for a vote",
-    :text => call_for_vote_email
+    :text => "Hi there ! Your input is requested. Please click this link and vote :
+    http://fastdemocracy.herokuapp.com/#{@poll.id}/vote/#{voter.token} ."
   end
 
 
