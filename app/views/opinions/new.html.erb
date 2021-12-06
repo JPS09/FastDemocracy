@@ -1,6 +1,11 @@
-<% if @poll.status == "open_for_vote" %>
-  <h1><%= @voter.email %></h1>
-  <h2><%= @voter.voted %></h2>
+<%# below is a helper (found in application_helper) to check if the voter is allowed on this vote. %>
+<% if voter_allowed_on_vote?  %>
+  <% if @poll.status == "sent" %>
+    <h1><%= @voter.email %></h1>
+    <h2><%= @voter.has_voted %></h2>
+  <% else %>
+    <% invalid_voter %>
+  <% end %>
 <% else %>
   <% invalid_voter %>
 <% end %>
