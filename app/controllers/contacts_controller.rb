@@ -4,12 +4,14 @@ class ContactsController < ApplicationController
   def new
     @user = current_user
     @contact = Contact.new
+
   end
 
   def index
-    @contacts = Contact.where(user_id: current_user)
+    @contacts = Contact.all
     @contact = Contact.new
-    @contact_list = Contact_list.new
+    @contact_list = ContactList.new
+
   end
 
   def create
@@ -23,9 +25,9 @@ class ContactsController < ApplicationController
     @contact.save
   end
 
+
+
   def show
-
-
   end
 
   private
@@ -34,9 +36,9 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:email, :first_name, :last_name)
   end
 
-
-
   def find_contact
     @contact = Contact.find(params[:id])
+
   end
+
 end

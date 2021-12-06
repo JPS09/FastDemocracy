@@ -1,9 +1,9 @@
-class ContactListsController <
+class ContactListsController < ApplicationController
 
 
   def new
     @user = current_user
-    @contact_list = Contact_list.new
+    @contacts_list = Contact_list.new
   end
 
 
