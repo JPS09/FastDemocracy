@@ -3,7 +3,7 @@
 <h2>Create a contact</h2>
 <%= render "form", contact: @contact %>
 <% @contacts.each do |contact|  %>
-  <%= contact.name %>
+  <%= contact.first_name %>
 <% end %>
 <h2>Create list</h2>
 <%= render "contact_lists/form", contact_list: @contact_list %>
