@@ -11,11 +11,8 @@ Rails.application.routes.draw do
   resources :contacts, only: %i[new index show create update]
   resources :answers, only: %i[new show update create destroy]
 
-  get '/contacts/new', to: 'contacts#new'
+  get '/contacts/index', to: 'contacts#index'
   post 'contacts', to: 'contacts#create'
-
-
-  get '/contact_list/new', to: 'contact_list#new'
   post 'contact_list', to: 'contact_list#create'
 
 end

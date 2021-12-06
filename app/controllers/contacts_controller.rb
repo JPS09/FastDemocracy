@@ -7,7 +7,9 @@ class ContactsController < ApplicationController
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.where(user_id: current_user)
+    @contact = Contact.new
+    @contact_list = Contact_list.new
   end
 
   def create
@@ -22,6 +24,8 @@ class ContactsController < ApplicationController
   end
 
   def show
+
+
   end
 
   private
