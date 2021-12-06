@@ -1,4 +1,4 @@
-<div class="container-page">
+
   <p><%= @poll.status %></p>
   <% if @poll.status == "pending" %>
     <div class="container-cards">
@@ -15,4 +15,24 @@
   <% elsif @poll.status == "ongoing" %>
     <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
   <% end %>
-</div>
+
+
+<%# defines the display depending on poll status. %>
+<%# this one is for the poll "pending" %>
+<% if @poll.status == "pending" %>
+  <div class="container justify-content-center align-items-start">
+    <div class="row-4 justify-content-around">
+    <%# this is the space where existing questions are displayed %>
+    <%= render partial: "shared/existingquestion", collection: @existingquestions %>
+    </div>
+    <div class="row-6 justify-content-center">
+    <%# this is where the form is to be displayed %>
+      <div class="col-8">
+        <%= render partial: "shared/newquestion", locals: {question: @question} %>
+      </div>
+    </div>
+    <div class="row-2">
+      <%# bottom-bar %>
+    </div>
+  </div>
+<% end %>
