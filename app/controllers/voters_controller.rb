@@ -13,7 +13,7 @@ class VotersController < ApplicationController
         call_for_votes(voter)
       end
     end
-    @poll.status = "sent"
+    @poll.status = "SENT"
     @poll.save!
     redirect_to poll_path(@poll)
     # AFAIK, the raise showed that the voters were perfectly created with the correct poll_id and the correct email. Yay !

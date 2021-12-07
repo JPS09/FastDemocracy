@@ -5,16 +5,18 @@ class OpinionsController < ApplicationController
     @questions = @poll.questions
     @token = params[:token]
     @voter = Voter.find_by token: @token
+    @opinion = Opinion.new
   end
 
   def create
-    if allow_vote
-      @opinions = params[:opinions]
-      @opinions.each do |question, answer|
-        Opinion.create(question_id: question.id, answer_id: answer.id, voter_id: @voter.id)
-      end
-      @voter.has_voted == true
+    @voter = Voter.find(params[:voter_id])
+    @opinions = opinion_params.to_hash
+    @opinions.each do |opinion|
+      Opinion.new(question_id: opinion[0], answer_id: opinion[1], voter_id: @voter.id).save!
     end
+    @voter.mark_as_has_voted
+    # this function changes the poll status if all voters expressed their vote
+    check_if_poll_complete
   end
 
   def invalid_voter
@@ -24,7 +26,8 @@ class OpinionsController < ApplicationController
 
   private
 
-  def allow_vote
-    return true if Poll.find(Voter.find(@token)) && @poll.status == "ONGOING" && @voter.has_voted == false
+  def opinion_params
+    params.require(:answers).permit!
   end
+
 end

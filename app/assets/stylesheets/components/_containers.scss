@@ -1,28 +1,16 @@
-.container-page {
-  width: 900px;
-  margin: 0 auto;
-}
 
-.container-questions {
+// .container-questions {
 
-}
 // .container-navbar {
 //   grid-column-start: first;
 //   grid-column-end: last;
 //   grid-row-start: first-row;
 //   grid-row-end: row2;
-// }
-.container-existing-questions {
-}
 
-.container-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
+
 .container-new-questions {
-  width: 500px;
-  margin: 0 auto;
+  justify-content: center;
+  margin-top:30px;
 }
 
 .container-general {
