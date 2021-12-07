@@ -94,7 +94,7 @@ poll_one = Poll.new(
   {
     user_id: kate.id,
     name: "Budget 2022",
-    status: "pending",
+    status: "PENDING",
     expiry_date: Time.now + (1 * 60 * 60),
     deletion_date: Time.now + (24 * 60 * 60)
   }
@@ -117,7 +117,7 @@ question_one = Question.new(
     title: "Question 1",
     content: "Devrait t'on augmenter le budget café, Redbull et Xanax du service Web Dev ?",
     mandatory: true,
-    question_type: "unique"
+    question_type: "UNIQUE"
   }
 )
 question_one.save!
@@ -129,7 +129,7 @@ question_two = Question.new(
     content: "Devrait t-on embaucher un cuisiner pour que Camille ne mange plus ses
     'pic&kroq' ainsi que ses pompottes à midi ?",
     mandatory: false,
-    question_type: "unique"
+    question_type: "UNIQUE"
   }
 )
 question_two.save!
@@ -157,7 +157,7 @@ poll_2 = Poll.new(
   {
     user_id: ju.id,
     name: "Menu de la cantine",
-    status: "pending",
+    status: "PENDING",
     expiry_date: Time.now + (1 * 60 * 60),
     deletion_date: Time.now + (24 * 60 * 60)
   }
@@ -182,7 +182,7 @@ question_three = Question.new(
     title: "Question 1",
     content: "Doit arrêter de servir la soupe à la cantine avec les poils de Momo à l'intérieur ?",
     mandatory: true,
-    question_type: "unique"
+    question_type: "UNIQUE"
   }
 )
 question_three.save!
@@ -193,7 +193,7 @@ question_four = Question.new(
     title: "Question 2",
     content: "Doit t on virer Momo ?",
     mandatory: false,
-    question_type: "unique"
+    question_type: "UNIQUE"
   }
 )
 question_four.save!
