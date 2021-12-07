@@ -14,5 +14,4 @@ module ApplicationHelper
       @poll.set_status_to_over
     end
   end
-
 end

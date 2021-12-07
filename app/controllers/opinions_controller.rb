@@ -15,6 +15,7 @@ class OpinionsController < ApplicationController
       Opinion.new(question_id: opinion[0], answer_id: opinion[1], voter_id: @voter.id).save!
     end
     @voter.mark_as_has_voted
+    check_if_poll_complete
   end
 
   def invalid_voter
