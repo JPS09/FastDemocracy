@@ -25,6 +25,6 @@ class OpinionsController < ApplicationController
   private
 
   def allow_vote
-    return true if Poll.find(Voter.find(@token)) && @poll.status == "open_for_vote" && @voter.has_voted == false
+    return true if Poll.find(Voter.find(@token)) && @poll.status == "ONGOING" && @voter.has_voted == false
   end
 end

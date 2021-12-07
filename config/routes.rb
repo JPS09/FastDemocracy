@@ -13,4 +13,9 @@ Rails.application.routes.draw do
 
   get '/polls/:poll_id/vote/:token', to: 'opinions#new'
   post '/polls/:poll_id/vote/:token', to: 'opinions#create'
+
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end

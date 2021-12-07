@@ -5,6 +5,7 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new(id: poll_params[:format])
+    # sends CheckerWorker to verify if status didn't change and delete it.
     redirect_to poll_path(@poll)
   end
 
@@ -16,7 +17,7 @@ class PollsController < ApplicationController
 
   def questions_done
     @poll = Poll.find(params[:poll_id])
-    @poll.status = "questions_done"
+    @poll.status = "QUESTIONS_DONE"
     if @poll.save!
       redirect_to poll_path(@poll)
     else
@@ -25,9 +26,9 @@ class PollsController < ApplicationController
   end
 
   def create
-    @poll = Poll.create(user: current_user, status: "pending")
-    @poll.expiry_date = Time.now + 3.hours
-    @poll.deletion_date = @poll.expiry_date + 5.minutes
+    @poll = Poll.create(user: current_user, status: "PENDING")
+    @poll.initial_expiry_date
+    CheckerWorker.perform_in(3.hours, @poll.id)
     # by default, a user can create a poll and manage it during 3 hours.
     # Past this deadline, it is to be destroyed 5 minutes later.
     redirect_to new_poll_path(@poll)
