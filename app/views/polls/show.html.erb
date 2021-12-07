@@ -1,6 +1,7 @@
 
-  <p><%= @poll.status %></p>
-  <% if @poll.status == "pending" %>
+<%# poll starts with status PENDING and should display a new question form + existing questions %>
+<% case @poll.status
+   when "PENDING" %>
 
   <div class="d-flex flex-column align-items-center">
     <div >
@@ -12,10 +13,10 @@
     </div>
   </div>
 
-  <% elsif @poll.status == "questions_done" %>
+<%= when "QUESTIONS_DONE"  %>
     <div style="color:white; font-size: 30px">Now that the poll is complete, you can add your contacts. </div>
     <%# above text to remove, ofc %>
     <%= render partial: "shared/newvoters", locals: {voters: @voters} %>
-  <% elsif @poll.status == "ongoing" %>
+<%= when ""  %>
     <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
   <% end %>

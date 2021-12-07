@@ -13,8 +13,7 @@ class VotersController < ApplicationController
         call_for_votes(voter)
       end
     end
-    @poll.status = "SENT"
-    @poll.save!
+    @poll.set_status_to_questions_done
     redirect_to poll_path(@poll)
     # AFAIK, the raise showed that the voters were perfectly created with the correct poll_id and the correct email. Yay !
   end
@@ -29,7 +28,6 @@ class VotersController < ApplicationController
     text: "Hi there ! Your input is requested. Please click this link and vote :
     http://fastdemocracy.herokuapp.com/#{@poll.id}/vote/#{voter.token} ."
   end
-
 
   # TODO : write a test to get the API response and if positive, go to the next step
   # and change the poll status accordingly.

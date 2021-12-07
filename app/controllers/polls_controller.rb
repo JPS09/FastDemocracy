@@ -17,12 +17,8 @@ class PollsController < ApplicationController
 
   def questions_done
     @poll = Poll.find(params[:poll_id])
-    @poll.status = "QUESTIONS_DONE"
-    if @poll.save!
-      redirect_to poll_path(@poll)
-    else
-      raise
-    end
+    @poll.set_status_to_questions_done
+    redirect_to poll_path(@poll)
   end
 
   def create
