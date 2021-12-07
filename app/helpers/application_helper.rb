@@ -11,8 +11,8 @@ module ApplicationHelper
     total_voters = @poll.voters.count
     voters_who_voted = Voter.where(poll_id: @poll.id, has_voted: true)
     if total_voters == voters_who_voted
-      @poll.
+      @poll.set_status_to_over
     end
-
+  end
 
 end
