@@ -1,13 +1,17 @@
-<div class="container-page">
+
   <p><%= @poll.status %></p>
   <% if @poll.status == "pending" %>
-    <div class="container-cards">
+
+  <div class="d-flex flex-column align-items-center">
+    <div >
       <%= render partial: "shared/existingquestion", collection: @existingquestions %>
     </div>
     <div class="container-new-questions">
       <%= render partial: "shared/newquestion", locals: {question: @question} %>
 
     </div>
+  </div>
+
   <% elsif @poll.status == "questions_done" %>
     <div style="color:white; font-size: 30px">Now that the poll is complete, you can add your contacts. </div>
     <%# above text to remove, ofc %>
@@ -15,4 +19,3 @@
   <% elsif @poll.status == "ongoing" %>
     <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
   <% end %>
-</div>

@@ -1,31 +1,33 @@
 <%# I need to have 2 separate fields ; 1 for question params, another one for answers (linked to the said question) %>
-
-<div style="margin-bottom:60px">
-  <%= simple_form_for @question do |f| %>
-    <div style="color:white"><%= f.input :title, label: 'Your question title please:', error: 'This question title is not valid'%></div>
-    <div style="color:white"><%= f.input :content, hint: '10-200 characters' %></div>
-    <div style="color:white"><%= f.input :answers, input_html: { value: "", name: "answers[]"}, hint: '10-200 characters' %></div>
-    <div style="color:white"><%= f.input :answers, input_html: { value: "", name: "answers[]"}, hint: '10-200 characters' %></div>
-    <div style="color:white"><%= f.input :answers, input_html: { value: "", name: "answers[]"}, hint: '10-200 characters' %></div>
-    <%= hidden_field_tag(:poll_id, @poll.id) %>
-    <%= f.button :submit, class: "btn", style: "color:white" %>
-  <% end %>
-</div>
-
-
-<div class="footer main-card">
-  <div class="footer-btn">
-  <%= link_to root_path do %>
-    <i class="fas fa-chevron-left"></i>
+  <div style="margin-bottom:60px" class="questioncard">
+    <%= simple_form_for @question do |f| %>
+      <div style="color:white; padding:15px"><%= f.input :title, label: 'Your question title please:', error: 'This question title is not valid'%></div>
+      <div style="color:white; padding:15px"><%= f.input :content, hint: '10-200 characters' %></div>
+      <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"}, hint: '10-200 characters' %></div>
+      <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"}, hint: '10-200 characters' %></div>
+      <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"}, hint: '10-200 characters' %></div>
+      <%= hidden_field_tag(:poll_id, @poll.id) %>
+      <%= f.button :submit, class: "btn", style: "margin-left:45px"%>
     <% end %>
   </div>
-  <div class="footer-btn"><i class="fas fa-plus"></i></div>
 
-  <%= link_to questions_done_path(@poll), method: :patch do %>
-    <div class="footer-btn"><i class="fas fa-chevron-right"></i></div>
-  <% end %>
 
-</div>
+
+
+
+  <div class="footer main-card">
+    <div class="footer-btn">
+    <%= link_to root_path do %>
+      <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+    <div class="footer-btn"><i class="fas fa-plus"></i></div>
+
+    <%= link_to questions_done_path(@poll), method: :patch do %>
+      <div class="footer-btn"><i class="fas fa-chevron-right"></i></div>
+    <% end %>
+    </div>
+  </div>
 
 
 

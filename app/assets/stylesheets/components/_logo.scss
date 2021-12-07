@@ -11,13 +11,8 @@
   text-align: center;
   font-size: 50px;
   font-family:'Josefin Sans',sans-serif;
-  font-weight: bolder;
+  font-weight: bold;
   letter-spacing: -4px;
-}
-
-.insetshadow {
-  color: #e9ecef;
-  text-shadow:
-    -1px -1px 1px #111,
-    2px 2px 1px #363636;
+  color: lightgrey;
+  text-shadow: 4px 5px 9px #1d2d44;
 }

@@ -1,0 +1,9 @@
+<div style="margin-bottom:60px">
+  <%= simple_form_for @contact do |f| %>
+    <div style="color:white"><%= f.input :last_name, label: 'Last Name' %></div>
+    <div style="color:white"><%= f.input :first_name, label: 'First name' %></div>
+    <div style="color:white"><%= f.input :email %></div>
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <%= f.button :submit, class: "btn", style: "color:white" %>
+  <% end %>
+</div>
