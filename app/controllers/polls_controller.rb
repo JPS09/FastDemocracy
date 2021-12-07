@@ -1,6 +1,7 @@
 class PollsController < ApplicationController
   def index
     @polls = Poll.all
+    @results = scope
   end
 
   def new
@@ -12,6 +13,22 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
     @question = Question.new
     @existingquestions = Question.where(poll_id: params[:id])
+
+    @results = scope.find(params[:id])
+
+        respond_to do |format|
+              format.html
+              format.pdf do
+                render pdf: "Invoice No. #{@results.id}",
+                page_size: 'A4',
+                template: "results/show.html.erb",
+                layout: "pdf.html",
+                orientation: "Landscape",
+                lowquality: true,
+                zoom: 1,
+                dpi: 75
+              end
+          end
   end
 
   def questions_done
