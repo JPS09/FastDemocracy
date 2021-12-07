@@ -55,4 +55,12 @@ class PollsController < ApplicationController
   def poll_params
     params.permit(:format, :name, :user_id, :expiry_date, :deletion_date)
   end
+
+  def scope
+    ::Invoice.all.includes(:invoice_items)
+    # => ::Poll.all.includes(:results) ??
+
+  end
+
+
 end
