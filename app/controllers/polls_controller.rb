@@ -14,6 +14,7 @@ class PollsController < ApplicationController
     @question = Question.new
     @existingquestions = Question.where(poll_id: params[:id])
     @opinions = Opinion.where(poll_id: @poll.id)
+    @pollquestions = Question.where(poll_id: params[:id])
   end
 
   def questions_done

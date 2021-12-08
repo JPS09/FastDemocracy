@@ -13,7 +13,9 @@ class VotersController < ApplicationController
         call_for_votes(voter)
       end
     end
-    @poll.set_status_to_questions_done
+    @poll.set_status_to_ongoing
+    @poll.vote_expiry_date
+    ExpirationWorker.perform_in(10.minutes, @poll.id)
     redirect_to poll_path(@poll)
     # AFAIK, the raise showed that the voters were perfectly created with the correct poll_id and the correct email. Yay !
   end
