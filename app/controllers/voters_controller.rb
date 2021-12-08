@@ -26,7 +26,7 @@ class VotersController < ApplicationController
     to: "#{voter.email}",
     subject: "You've been called for a vote",
     text: "Hi there ! Your input is requested. Please click this link and vote :
-    http://fastdemocracy.herokuapp.com/#{@poll.id}/vote/#{voter.token} ."
+    http://fastdemocracy.herokuapp.com/polls/#{@poll.id}/vote/#{voter.token} ."
   end
 
   # TODO : write a test to get the API response and if positive, go to the next step
