@@ -13,10 +13,10 @@
     </div>
   </div>
 
-<%= when "QUESTIONS_DONE"  %>
-    <div style="color:white; font-size: 30px">Now that the poll is complete, you can add your contacts. </div>
+<%#= when "QUESTIONS_DONE"  %>
+    <!--<div style="color:white; font-size: 30px">Now that the poll is complete, you can add your contacts. </div>
     <%# above text to remove, ofc %>
     <%= render partial: "shared/newvoters", locals: {voters: @voters} %>
-<%= when ""  %>
+<%#= when ""  %>
     <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
   <% end %>

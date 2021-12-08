@@ -5,17 +5,20 @@
   margin-top: 20px;
   justify-content: center;
   box-shadow: 1px 3px 10px black;
-  color: #387DD8;
-  background-color: white;
+  color: black;
+  background-color: #f0efeb;
   text-align: center;
-  opacity:80%;
+  opacity:68%;
+  font-family:'Josefin Sans';
+  border-radius: 12px;
 }
 
 .question-number{
   text-align: center;
   font-weight: bold;
-  background-color:white ;
-  color:#387DD8;
+  background-color:#f0efeb ;
+  color:black;
+  font-size: 18px;
 }
 
 .question-title{
