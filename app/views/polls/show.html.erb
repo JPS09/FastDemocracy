@@ -10,9 +10,12 @@
     </div>
   </div>
 <% elsif @poll.status == "QUESTIONS_DONE"  %>
-  <div style="color:white; font-size: 30px">Now that the poll is complete, you can add your contacts. </div>
+  <div class="page-title"><strong> Who are we sending this poll to ? </strong></div>
   <%# above text to remove, ofc %>
-  <%= render partial: "shared/newvoters", locals: {voters: @voters} %>
+  <div class="container-new-questions d-flex flex-column align-items-center">
+    <%= render partial: "shared/newvoters", locals: {voters: @voters} %>
+  </div>
+
 <% elsif @poll.status == "SENT" %>
   <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
 <% elsif @poll.status == "ONGOING" %>
@@ -20,4 +23,3 @@
 <% elsif @poll.status == "OVER" %>
   <h1>This vote is now over</h1>
 <% end %>
-
