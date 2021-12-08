@@ -1,4 +1,5 @@
 class OpinionsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :find_poll, only: %i[new create]
 
   def new
