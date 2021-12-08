@@ -1,6 +1,6 @@
-<div class="container" style="display:grid; justify-items:center">
-  <div class="row justify-content-md-center logo" >
-    <%= image_tag "logo.png", alt: "Logo FastDem", width: 250%>
+
+  <div class="d-flex flex-column align-items-center" >
+    <%= image_tag "logo.png", alt: "Logo FastDem", width: 250, style: "margin-top: 15px"%>
   </div>
 
   <div class="row justify-content-md-center headline insetshadow"> Online Vote made simple.</div>
@@ -14,7 +14,6 @@
   </div>
 
 
-  <div class="row justify-content-md-center" style="margin-bottom:150px">
+  <div class="d-flex flex-column align-items-center" style="margin-bottom:150px">
     <button type="button" class="btn btn-primary btn-lg"><%= link_to "Start", polls_path, method: :post, class: "btn" %></button>
   </div>
-</div>

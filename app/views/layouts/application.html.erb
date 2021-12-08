@@ -18,7 +18,9 @@
     <% unless params[:controller] == 'pages' %>
       <%= render 'shared/navbar' %>
     <% end %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= render 'shared/flashes' %>
   </body>
 </html>

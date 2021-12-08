@@ -13,7 +13,7 @@ class VotersController < ApplicationController
         call_for_votes(voter)
       end
     end
-    @poll.status = "sent"
+    @poll.status = "SENT"
     @poll.save!
     redirect_to poll_path(@poll)
     # AFAIK, the raise showed that the voters were perfectly created with the correct poll_id and the correct email. Yay !
@@ -23,10 +23,10 @@ class VotersController < ApplicationController
   def call_for_votes(voter)
     RestClient.post "https://api:#{ENV['MAILGUN_API_KEY']}"\
     "@api.eu.mailgun.net/v3/fastdemocracy.me/messages",
-    :from => "FastDemocracy <mailgun@fastdemocracy.me>",
-    :to => "#{voter.email}",
-    :subject => "You've been called for a vote",
-    :text => "Hi there ! Your input is requested. Please click this link and vote :
+    from: "FastDemocracy <mailgun@fastdemocracy.me>",
+    to: "#{voter.email}",
+    subject: "You've been called for a vote",
+    text: "Hi there ! Your input is requested. Please click this link and vote :
     http://fastdemocracy.herokuapp.com/#{@poll.id}/vote/#{voter.token} ."
   end
 

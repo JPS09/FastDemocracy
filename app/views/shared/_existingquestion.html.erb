@@ -1,11 +1,10 @@
-  <div class="card">
-    <div class="card-header">
-      <%= existingquestion.title %>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title"><%= existingquestion.content %></h4>
-      <% Answer.where(question_id: existingquestion.id).each do |a| %>
-        <p class="card-subtitle mb-2 text-muted"><%= a.content %></p>
-      <% end %>
-    </div>
-  </div>
+<div class="question-box">
+
+  <div class="question-number"> <%= existingquestion.title %> </div>
+
+  <p class="question-title" ><%= existingquestion.content %></p>
+
+  <% Answer.where(question_id: existingquestion.id).each do |a| %>
+    <div> • <%= a.content %></div>
+  <% end %>
+</div>

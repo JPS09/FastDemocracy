@@ -1,5 +1,25 @@
-.card {
-  width: 150px;
+.question-box {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  margin-top: 20px;
+  justify-content: center;
+  box-shadow: 1px 3px 10px black;
+  color: #387DD8;
+  background-color: white;
+  text-align: center;
+  opacity:80%;
+}
+
+.question-number{
+  text-align: center;
+  font-weight: bold;
+  background-color:white ;
+  color:#387DD8;
+}
+
+.question-title{
+  text-align: center;
 }
 
 .poll-presentation {
