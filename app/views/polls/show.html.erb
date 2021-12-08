@@ -3,7 +3,7 @@
 <% if @poll.status == "PENDING" %>
   <div class="d-flex flex-column align-items-center">
     <div>
-      <%= render partial: "shared/existingquestion", collection: @existingquestions %>
+      <%= render partial: "shared/existingquestion", collection: @pollquestions %>
     </div>
     <div class="container-new-questions">
       <%= render partial: "shared/newquestion", locals: {question: @question} %>
@@ -20,6 +20,7 @@
   <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
 <% elsif @poll.status == "ONGOING" %>
   <h1>This is an ongoing vote</h1>
+  <%= console %>
 <% elsif @poll.status == "OVER" %>
-  <h1>This vote is now over</h1>
+  <%= render partial: "shared/pollquestion", collection: @existingquestions %>
 <% end %>
