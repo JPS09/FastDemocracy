@@ -3,7 +3,7 @@ class ContactListsController < ApplicationController
 
   def new
     @user = current_user
-    @contacts_list = Contact_list.new
+    @contact_list = Contact_list.new
   end
 
 

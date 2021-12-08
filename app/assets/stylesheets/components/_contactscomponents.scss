@@ -1,0 +1,58 @@
+.createcontact{
+  height: 267px;
+  width: 360px;
+  box-shadow: 1px 7px 11px #1d2d44 ;
+  background-color: #f0efeb;
+  border-radius: 3px;
+  display:flex;
+  justify-content: center;
+  font-family:'Josefin Sans';
+  opacity: 92%;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.createlist{
+  height: 267px;
+  width: 360px;
+  box-shadow: 1px 7px 11px #1d2d44 ;
+  background-color: #f0efeb;
+  border-radius: 3px;
+  display:flex;
+  justify-content: center;
+  font-family:'Josefin Sans';
+  opacity: 92%;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  padding-top: 16px;
+}
+
+.createtitle{
+  font-family: 'Josefin Sans',sans-serif;
+  font-size:27px;
+  margin-top: 15px;
+  letter-spacing: -2px;
+  font-weight: bold;
+  color: lightgrey;
+  text-shadow: 4px 5px 9px #1d2d44;
+}
+
+.contactcard{
+  width: 118px;
+  height: 50px;
+  border-radius: 47px;
+  text-align: center ;
+  font-family: 'Josefin Sans';
+  font-size: 17px;
+  background-color: #f0efeb;
+  font-weight: bold;
+  box-shadow:  1px 5px 8px #1d2d44;
+}
+
+.contactlist{
+  display:inline-grid;
+  grid-template-columns: 30px 27px 26px;
+  grid-template-rows: 2px auto 29px;
+  column-gap: 14px;
+  row-gap: 12px;
+}
