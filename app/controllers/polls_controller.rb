@@ -13,6 +13,7 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
     @question = Question.new
     @existingquestions = Question.where(poll_id: params[:id])
+    @opinions = Opinion.where(poll_id: @poll.id)
   end
 
   def questions_done
@@ -31,7 +32,7 @@ class PollsController < ApplicationController
   end
 
   def update
-    @poll = Poll
+    # @poll = Poll
   end
 
   private

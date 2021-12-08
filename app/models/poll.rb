@@ -4,6 +4,7 @@ class Poll < ApplicationRecord
   belongs_to :user
   has_many :questions, dependent: :destroy
   has_many :voters, dependent: :destroy
+  has_many :opinions, dependent: :destroy
 
   # validates :name, length: { minimum: 5 } # possible regex plus tard
   # validates :user_id, presence: true
