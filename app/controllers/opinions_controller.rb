@@ -1,7 +1,7 @@
 class OpinionsController < ApplicationController
+  before_action :find_poll, only: %i[new create]
 
   def new
-    @poll = Poll.find(params[:poll_id])
     @questions = @poll.questions
     @token = params[:token]
     @voter = Voter.find_by token: @token
@@ -16,7 +16,7 @@ class OpinionsController < ApplicationController
     end
     @voter.mark_as_has_voted
     # this function changes the poll status if all voters expressed their vote
-    check_if_poll_complete
+    helpers.check_if_poll_complete(@poll)
   end
 
   def invalid_voter
@@ -28,6 +28,10 @@ class OpinionsController < ApplicationController
 
   def opinion_params
     params.require(:answers).permit!
+  end
+
+  def find_poll
+    @poll = Poll.find(params[:poll_id])
   end
 
 end

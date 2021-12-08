@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
 
   def create
     q = Question.new(question_params)
-    q.question_type = "unique"
+    q.question_type = "UNIQUE"
     q.poll_id = params[:poll_id]
     if q.save!
       params[:answers].each do |a|
