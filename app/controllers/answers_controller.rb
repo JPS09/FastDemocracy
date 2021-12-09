@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  # before_action :authenticate_user!
   before_action :find_answer, only: [:show, :update]
   before_action :new_answer, only: [:new, :create]
   def new

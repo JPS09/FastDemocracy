@@ -1,10 +1,15 @@
 <h2><%= pollquestion.title %></h2>
+<% answers = [] %>
+<% contents = [] %>
 
 <% Answer.where(question_id: pollquestion.id).each do |answer| %>
-  <h4><%= answer.content %></h4>
-  <% votes = Opinion.where(answer_id: answer.id).count %>
+  <% votes = Opinion.where(answer_id: answer.id) %>
+  <% answers << votes.count %>
+  <% contents << answer.content %>
   <% total = Opinion.where(question_id: pollquestion.id).count %>
-  <h5>Number of voters for this opinion : <%= votes %> .</h5>
-  <h5>On a total of : <%= total %> opinions expressed.</h5>
-  <h5>This represents a total of : <%= (votes * 100) / total %> %.</h5>
-  <% end %>
+  <h6>test sentence</h6>
+<% end %>
+
+<div>
+  <canvas class="my-chart" data-contents=<%= contents.to_json %> data-answers=<%= answers.to_json %>><%= pollquestion.title %></canvas>
+</div>

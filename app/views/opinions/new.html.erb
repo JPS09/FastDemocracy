@@ -1,5 +1,5 @@
 <%# below is a helper (found in application_helper) to check if the voter is allowed on this vote. %>
-<%# <% if voter_allowed_on_vote?  %> %>
+<%# <% if voter_allowed_on_vote?  %>
   <% if @poll.status == "ONGOING" && @voter.has_voted != true %>
     <%= form_tag("/polls/#{@poll.id}/vote/#{@token}", method: :post) do %>
       <% @questions.each do |question| %>

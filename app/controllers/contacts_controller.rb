@@ -1,5 +1,4 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user!
   before_action :find_contact, only: [:update, :show]
 
   def new
