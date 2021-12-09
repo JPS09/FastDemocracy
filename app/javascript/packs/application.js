@@ -30,6 +30,7 @@ import { newCharts } from "../plugins/_init_chart.js"
 import {addAnswerField} from '../components/add_answer_field.js'
 import { addVoterField } from '../components/add_voter.js'
 import { sendAquestion } from '../components/react_to_button_click.js'
+import { updatePoll } from '../components/react_to_button_update.js'
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   addAnswerField();
   addVoterField();
   sendAquestion();
+  updatePoll();
 
   newCharts();
 
