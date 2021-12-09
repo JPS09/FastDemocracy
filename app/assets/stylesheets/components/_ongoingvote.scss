@@ -1,0 +1,37 @@
+.refresh-button{
+  text-align: right;
+  margin-bottom: 60px;
+}
+
+.head{
+  text-align:center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  color:#f8edeb;
+  font-family: 'Josefin Sans',sans-serif;
+  font-size:30px;
+  font-weight: bolder;
+}
+
+.gif{
+  margin-bottom: 60px;
+}
+
+button {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+button:hover {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
