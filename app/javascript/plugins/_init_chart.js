@@ -18,7 +18,6 @@ const newChart = () => {
           {
             label: 'Dataset 1',
             data: [1, 25, 37, 12],
-            // data: Utils.numbers(NUMBER_CFG),
             backgroundColor: 'rgba(0, 0, 0, 0.1)',
           }
         ]}
