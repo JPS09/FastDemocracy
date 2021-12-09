@@ -3,11 +3,10 @@
     <%= simple_form_for @question do |f| %>
       <div style="color:white; padding:15px"><%= f.input :title, label: 'Your question title please:', error: 'This question title is not valid'%></div>
 
-      <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
-      <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
-      <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
+      <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %> <a class='add_answer' > + add an answer</a></div>
+
       <%= hidden_field_tag(:poll_id, @poll.id) %>
-      <%= f.button :submit, class: "btn", style: ""%>
+      <%= f.button :submit, "+ Add a question", class:"btn-primary"%>
     <% end %>
   </div>
 
