@@ -43,4 +43,9 @@ class Poll < ApplicationRecord
     self.status = 'OVER'
     save!
   end
+
+  def get_step_number
+    steps = ['PENDING', 'QUESTIONS_DONE', 'ONGOING', 'OVER']
+    return steps.index(self.status) + 1
+  end
 end

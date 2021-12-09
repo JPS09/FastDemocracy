@@ -11,6 +11,6 @@
     <h2><%= pollquestion.title %></h2>
   </div>
   <div class="results-chart">
-    <canvas class="my-chart" data-contents=<%= contents.to_json %> data-answers=<%= answers.to_json %>><%= pollquestion.title %></canvas>
+    <canvas class="my-chart" data-contents=<%= sanitize contents.to_json %> data-answers=<%= sanitize answers.to_json %>><%= pollquestion.title %></canvas>
   </div>
 </div>
