@@ -1,15 +1,16 @@
-<h2><%= pollquestion.title %></h2>
-<% answers = [] %>
-<% contents = [] %>
-
-<% Answer.where(question_id: pollquestion.id).each do |answer| %>
-  <% votes = Opinion.where(answer_id: answer.id) %>
-  <% answers << votes.count %>
-  <% contents << answer.content %>
-  <% total = Opinion.where(question_id: pollquestion.id).count %>
-  <h6>test sentence</h6>
-<% end %>
-
-<div>
-  <canvas class="my-chart" data-contents=<%= contents.to_json %> data-answers=<%= answers.to_json %>><%= pollquestion.title %></canvas>
+<div class="results-card">
+  <% answers = [] %>
+  <% contents = [] %>
+  <% Answer.where(question_id: pollquestion.id).each do |answer| %>
+    <% votes = Opinion.where(answer_id: answer.id) %>
+    <% answers << votes.count %>
+    <% contents << answer.content %>
+    <% total = Opinion.where(question_id: pollquestion.id).count %>
+  <% end %>
+  <div class="results-title">
+    <h2><%= pollquestion.title %></h2>
+  </div>
+  <div class="results-chart">
+    <canvas class="my-chart" data-contents=<%= contents.to_json %> data-answers=<%= answers.to_json %>><%= pollquestion.title %></canvas>
+  </div>
 </div>

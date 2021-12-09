@@ -19,7 +19,7 @@ class OpinionsController < ApplicationController
     @voter.mark_as_has_voted
     # this function changes the poll status if all voters expressed their vote
     helpers.check_if_poll_complete(@poll)
-    redirect_to new_opinions_path(:token)
+    redirect_to opinion_path(@poll)
   end
 
   def invalid_voter
