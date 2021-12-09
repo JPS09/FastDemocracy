@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # post 'contact_list', to: 'contact_list#create'
 
 
-  get '/polls/:poll_id/vote/:token', to: 'opinions#new'
+  get '/polls/:poll_id/vote/:token', to: 'opinions#new', as: :opinion
   post '/polls/:poll_id/vote/:token', to: 'opinions#create'
 
   require "sidekiq/web"

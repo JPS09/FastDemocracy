@@ -1,5 +1,6 @@
-<div class="voterscard">
+<div style="margin-bottom:60px" class="voterscard">
   <%= simple_form_for @poll, as: :poll, method: :post, url: add_voters_path(@poll) do |f| %>
+
     <div style="color:white; width:330px"><%= hidden_field_tag(:poll_id, @poll.id) %></div>
     <div style="color:white"><%= f.input :voters, input_html: { value: "", name: "voters[]"}, hint: '10-200 characters' %></div>
     <div style="color:white"><%=f.input :voters, input_html: { value: "", name: "voters[]"}, hint: '10-200 characters' %></div>
@@ -8,7 +9,11 @@
     <div style="color:white"><%= f.input :voters, input_html: { value: "", name: "voters[]"}, hint: '10-200 characters' %></div>
     <div style="color:white"><%= f.button :submit, class: "btn", style: "margin-left:20px" %>
   <% end %>
+
 </div>
 
+
 <div class="footer main-card">
-</div>
+    
+   </div>
+

@@ -24,11 +24,18 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
+import { newCharts } from "../plugins/_init_chart.js"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import {addAnswerField} from '../components/add_answer_field.js'
+import { addVoterField } from '../components/add_voter.js'
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  addAnswerField();
+  addVoterField();
+
+  newCharts();
+
 });
