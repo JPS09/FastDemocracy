@@ -13,11 +13,14 @@ body{
   margin-bottom: 250px;
 }
 
-.btn{
-  border-radius: 50px;
-  font-family: 'Josefin Sans',sans-serif;
-  background-color: white;
-  font-size: 20px;
-  font-weight: bolder;
-  color: #1d2d44;
+.custom-button{
+
+  align-self: flex-end;
+
+  // border-radius: 50px;
+  // font-family: 'Josefin Sans',sans-serif;
+  // background-color: white;
+  // font-size: 20px;
+  // font-weight: bolder;
+  // color: #1d2d44;
 }
