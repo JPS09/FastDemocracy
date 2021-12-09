@@ -1,13 +1,13 @@
 <h2><%= pollquestion.title %></h2>
+<% answers = [] %>
 
 <div>
-  <canvas id="my-chart"></canvas>
+  <canvas id="my-chart" data-answers=<%= answers %>></canvas>
 </div>
 <% Answer.where(question_id: pollquestion.id).each do |answer| %>
   <h4><%= answer.content %></h4>
   <% votes = Opinion.where(answer_id: answer.id).count %>
+  <% answers_set << votes %>
   <% total = Opinion.where(question_id: pollquestion.id).count %>
-  <h5>Number of voters for this opinion : <%= votes %> .</h5>
-  <h5>On a total of : <%= total %> opinions expressed.</h5>
-  <h5>This represents a total of : <%= (votes * 100) / total %> %.</h5>
+  <h6>test sentence</h6>
 <% end %>

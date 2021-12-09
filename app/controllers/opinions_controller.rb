@@ -28,7 +28,7 @@ class OpinionsController < ApplicationController
   private
 
   def opinion_params
-    params.require(:answers).permit!
+    params.permit!
   end
 
   def find_poll
