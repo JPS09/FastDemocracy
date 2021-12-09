@@ -7,18 +7,14 @@
           <div class="title">
             <h3><%= question.title %></h3>
           </div>
+        <% question.answers.each do |a| %>
+          <div class="answer"><%= radio_button_tag "answers[#{question.id}]", a.id  %><%= a.content %></div>
+          <%= hidden_field_tag 'voter_id', @voter.id %>
 
-          <div class="answer">
-          </div>
+
+
         </div>
 
-        <h3><%= question.content %></h3>
-        <h3><%= question.id %></h3>
-        <% question.answers.each do |a| %>
-          <%= label_tag a.content %>
-          <%= hidden_field_tag 'voter_id', @voter.id %>
-          <h3><%= a.id %></h3>
-          <%= radio_button_tag "answers[#{question.id}]", a.id %>
         <% end %>
       <% end %>
       <%= submit_tag 'Send your vote' %>
