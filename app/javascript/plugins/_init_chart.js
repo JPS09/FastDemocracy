@@ -6,39 +6,46 @@ import Chart from "chart.js";
 const DATA_COUNT = 5;
 const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
 
-const target = document.querySelector("#my-chart")
+const targets = document.querySelectorAll(".my-chart")
+console.log(targets)
 
-const newChart = () => {
-  if(target) {
-    new Chart(target, {
-      type: 'doughnut',
-      labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-      data: {
-        datasets: [
+const newCharts = () => {
+    if (targets) {
+      targets.forEach( (target) => {
+        const answersPerItem = JSON.parse(target.dataset.answers)
+        const answersContent = JSON.parse(target.dataset.contents)
+        new Chart(target, {
+          type: 'doughnut',
+          data: {
+            labels: answersContent,
+            datasets: [
+              {
+                label: 'Nombre de votes pour cette question',
+                data: answersPerItem,
+                backgroundColor: ["#080708", "#3772ff", "#df2935", "#fdca40", "#e6e8e6", "#d2d6ef"]
+              }
+            ]
+          },
+        },
           {
-            label: 'Dataset 1',
-            data: [1, 25, 37, 12],
-            backgroundColor: 'rgba(0, 0, 0, 0.1)',
-          }
-        ]}
-      ,
-    },
-      {
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              position: 'top',
-            },
-            title: {
-              display: true,
-              text: 'Chart.js Doughnut Chart'
+            options: {
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+                title: {
+                  display: true,
+                  text: 'Chart.js Doughnut Chart'
+                }
+              }
             }
           }
-        }
-      }
-    );
+        );
+      })
+    };
   };
-};
 
-export { newChart };
+
+
+export { newCharts };
