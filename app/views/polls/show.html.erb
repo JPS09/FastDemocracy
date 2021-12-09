@@ -19,7 +19,9 @@
 <% elsif @poll.status == "SENT" %>
   <%= render partial: "shared/votestatus_test", locals: {opinions: @opinions} %>
 <% elsif @poll.status == "ONGOING" %>
+
   <%= render "shared/ongoingvote" %>
+
 <% elsif @poll.status == "OVER" %>
   <%= render partial: "shared/pollquestion", collection: @existingquestions %>
 <% end %>
