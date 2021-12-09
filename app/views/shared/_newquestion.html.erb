@@ -1,13 +1,12 @@
 <%# I need to have 2 separate fields ; 1 for question params, another one for answers (linked to the said question) %>
   <div style="margin-bottom:60px" class="questioncard">
     <%= simple_form_for @question do |f| %>
-      <div style="color:white; padding:15px"><%= f.input :title, label: 'Your question title please:', error: 'This question title is not valid'%></div>
-
+      <div style="color:white; padding:15px;width:330px"><%= f.input :title, label: 'Your question title please:', error: 'This question title is not valid'%></div>
       <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
       <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
       <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
       <%= hidden_field_tag(:poll_id, @poll.id) %>
-      <%= f.button :submit, class: "btn", style: ""%>
+      <%= f.button :submit, class: "btn", style: "margin-left:20px"%>
     <% end %>
   </div>
 

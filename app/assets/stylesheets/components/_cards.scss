@@ -1,7 +1,7 @@
 .question-box {
   display: flex;
   flex-direction: column;
-  width: 98%;
+  width: 250px;
   margin-top: 20px;
   justify-content: center;
   box-shadow: 1px 3px 10px black;
@@ -10,7 +10,6 @@
   text-align: center;
   opacity:68%;
   font-family:'Josefin Sans';
-  border-radius: 12px;
 }
 
 .question-number{

@@ -1,9 +1,4 @@
 .voterscard{
-  height: 610px;
-  width: 300px;
-  box-shadow: 1px 7px 11px #1d2d44 ;
-  background-color: #f0efeb;
-  border-radius: 4px;
   display:flex;
   justify-content: center;
   font-family:'Josefin Sans';
@@ -14,9 +9,8 @@
 .page-title{
   text-align: center;
   font-family: 'Josefin Sans',sans-serif;
-  font-size: 50px;
-  letter-spacing: -5px;
+  font-size: 27px;
+  letter-spacing: -3px;
   margin-top: 20px;
   color: lightgrey;
-  text-shadow: 4px 5px 9px #1d2d44;
 }
