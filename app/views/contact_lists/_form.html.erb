@@ -1,8 +1,8 @@
 <div class="createlist">
   <%= simple_form_for @contact_list do |f| %>
   <div class="d-flex flex-column" >
-    <div style="color:black"><%= f.input :name, label: 'Name' %></div>
-    <div style="color:black"><%= f.input :contact, label: 'Contact' %></div>
+    <div style="color:white"><%= f.input :name, label: 'Name' %></div>
+    <div style="color:white"><%= f.input :contact, label: 'Contact' %></div>
     <%= hidden_field_tag(:user_id, current_user.id) %>
   </div>
     <%= f.button :submit, class: "btn"%>

@@ -1,8 +1,8 @@
 <div class="d-flex flex-column align-items-center">
-  <div class="createtitle">Create a contact</div>
+  <div class="createtitle">Add a contact:</div>
   <%= render "form", contact: @contact %>
 
-  <div class="createtitle">Create list</div>
+  <div class="createtitle">Create contact list:</div>
   <%= render "contact_lists/form", contact_list: @contact_list %>
 
 
@@ -11,8 +11,8 @@
 
 </div>
   <% @contacts.each do |contact|  %>
-  <div class ="contactlist">
-    <div class="contactcard"> <%= contact.first_name %></div>
+  <div >
+    <div class="contactcard"> <input type="checkbox"> <%= contact.first_name %></div>
   </div>
   <% end %>
 </div>
