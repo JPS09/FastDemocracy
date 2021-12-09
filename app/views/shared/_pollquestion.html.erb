@@ -1,7 +1,7 @@
 <h2><%= pollquestion.title %></h2>
 
-<div id="my-chart">
-
+<div>
+  <canvas id="my-chart"></canvas>
 </div>
 <% Answer.where(question_id: pollquestion.id).each do |answer| %>
   <h4><%= answer.content %></h4>
