@@ -15,6 +15,9 @@
       <% end %>
       <%= submit_tag 'Send your vote' %>
     <% end %>
+
+    <% else %>
+      <%= render "shared/votecompleted" %>
   <% end %>
   <%# <% else %>
     <%# <% invalid_voter %>

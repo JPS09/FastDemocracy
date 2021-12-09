@@ -11,6 +11,7 @@ class OpinionsController < ApplicationController
 
   def create
     @voter = Voter.find(params[:voter_id])
+    @token = params[:token]
     @opinions = opinion_params.to_hash
     @opinions.each do |opinion|
       Opinion.new(poll_id: params[:poll_id], question_id: opinion[0], answer_id: opinion[1], voter_id: @voter.id).save!
@@ -18,6 +19,7 @@ class OpinionsController < ApplicationController
     @voter.mark_as_has_voted
     # this function changes the poll status if all voters expressed their vote
     helpers.check_if_poll_complete(@poll)
+    redirect_to new_opinions_path(:token)
   end
 
   def invalid_voter
