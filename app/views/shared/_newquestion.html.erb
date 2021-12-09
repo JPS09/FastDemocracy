@@ -7,21 +7,24 @@
       <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
       <div style="color:white; padding:15px"><%= f.input :answers, input_html: { value: "", name: "answers[]"} %></div>
       <%= hidden_field_tag(:poll_id, @poll.id) %>
-      <%= f.button :submit, class: "btn", style: "margin-left:20px"%>
+
+      <%# <%= f.button :submit, "+ Add a question", style: "margin: 0 auto; width: 250px; font-weight: bold; color: white;" %>
 
     <% end %>
   </div>
 
 
-  <div class="footer main-card">
-    <div class="footer-btn">
-    </div>
+  <div class="footer main-card d-flex justify-content-around" >
+
+
+    <button class="button_send_question", style="font-weight: bold; color: #5f50df;">+ Add a question</button>
+
 
 
     <%= link_to questions_done_path(@poll), method: :patch do %>
       <div class="footer-btn"><i class="far fa-check-circle w-16 fa-2x" id='check-icon'></i></div>
     <% end %>
-    </div>
+
   </div>
 
 
