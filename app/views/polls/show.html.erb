@@ -1,4 +1,4 @@
-
+<%= render 'shared/stepper', poll: @poll %>
 <%# poll starts with status PENDING and should display a new question form + existing questions %>
 <% if @poll.status == "PENDING" %>
   <div class="d-flex flex-column align-items-center">
