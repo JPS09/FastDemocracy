@@ -7,7 +7,7 @@
     </div>
   </div>
 <% elsif @poll.status == "QUESTIONS_DONE"  %>
-  <div class="page-title"><strong> Who are we sending this poll to ? </strong></div>
+  <div class="page-title"><h1>Who are we sending this poll to ?</h1></div>
   <%# above text to remove, ofc %>
   <div class="container-new-questions d-flex flex-column align-items-center">
     <%= render partial: "shared/newvoters", locals: {voters: @voters} %>
