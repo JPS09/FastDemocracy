@@ -1,9 +1,17 @@
-.votercard{
+
+.votercard {
   height: 80vh;
   width: 300px;
   display:flex;
   justify-content: center;
+}
 
+.page-title {
+  text-align: center;
+  font-size: 27px;
+  letter-spacing: -3px;
+  margin-top: 20px;
+  color: lightgrey;
 }
 
 .page-title{
@@ -13,3 +21,4 @@
   margin-top: 20px;
   color: lightgrey;
 }
+
