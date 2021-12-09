@@ -7,18 +7,26 @@
           <div class="title">
             <h3><%= question.title %></h3>
           </div>
-        <% question.answers.each do |a| %>
-          <div class="answer"><%= radio_button_tag "answers[#{question.id}]", a.id  %><%= a.content %></div>
-          <%= hidden_field_tag 'voter_id', @voter.id %>
-
-
-
+          <div class="votecard-answers">
+            <% question.answers.each do |a| %>
+            <div class="votecard-answer">
+              <%= radio_button_tag "answers[#{question.id}]", a.id  %>
+              <div class="votecard-label">
+                <%= a.content %>
+              </div>
+            </div>
+            <%= hidden_field_tag 'voter_id', @voter.id %>
+          <% end %>
+          </div>
         </div>
+        <div class="votecard-button-validate">
+          <%= submit_tag 'Send your vote', class: "votecard-validate" %>
+        </div>
+          <% end %>
 
         <% end %>
-      <% end %>
-      <%= submit_tag 'Send your vote' %>
-    <% end %>
+
+
 
     <% else %>
       <%= render "shared/votecompleted" %>

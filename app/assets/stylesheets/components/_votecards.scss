@@ -7,21 +7,50 @@
   margin-bottom: 10px;
   margin-left: 6px;
   margin-right: 6px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .votecard-title {
-  padding: 4px;
+  padding: 6px;
   text-align: center;
 }
 
 .votecard-answer {
-  padding: 4px;
+  padding: 6px 15px 6px 15px;
   background-color: #5F50df;
   color: white;
+  border-radius: 8px;
+  margin: 5px;
+  display: flex;
 }
 
 .votecard-validate {
-  padding: 4px
+  margin-top: 10px;
+  padding: 6px;
+  background-color: white;
+  border-color: #5F50df;
+  border-radius: 8px;
+  color: #5F50df;
+  font-weight: 600;
+}
+
+.votecard-answers {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.votecard-label {
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+.votecard-button-validate {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
