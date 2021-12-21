@@ -7,16 +7,17 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @question = Question.new
     q = Question.new(question_params)
     q.question_type = "UNIQUE"
     q.poll_id = params[:poll_id]
-    if q.save!
+    if q.save
       params[:answers].each do |a|
-        Answer.new(question_id: q.id, content: a).save!
+        Answer.new(question_id: q.id, content: a).save
       end
       redirect_to poll_path(@poll)
     else
-      render :new
+      render "polls/show"
     end
   end
 
