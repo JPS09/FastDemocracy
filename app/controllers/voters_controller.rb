@@ -23,8 +23,8 @@ class VotersController < ApplicationController
 
   def call_for_votes(voter)
     RestClient.post "https://api:#{ENV['MAILGUN_API_KEY']}"\
-    "@api.eu.mailgun.net/v3/fastdemocracy.me/messages",
-    from: "FastDemocracy <mailgun@fastdemocracy.me>",
+    "@api.eu.mailgun.net/v3/mailer.fastdemocracy.me/messages",
+    from: "FastDemocracy <julien@fastdemocracy.me>",
     to: "#{voter.email}",
     subject: "You've been called for a vote",
     text: "Hi there ! Your input is requested. Please click this link and vote :

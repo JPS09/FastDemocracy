@@ -110,5 +110,5 @@ ActiveRecord::Schema.define(version: 2021_12_08_124801) do
   add_foreign_key "opinions", "voters"
   add_foreign_key "polls", "users"
   add_foreign_key "questions", "polls"
-  add_foreign_key "voters", "polls"
+  add_foreign_key "voters", "polls", on_delete: :cascade
 end
