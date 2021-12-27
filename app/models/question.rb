@@ -1,5 +1,6 @@
 class Question < ApplicationRecord
   belongs_to :poll
+  has_many :answers
   accepts_nested_attributes_for :answers
 
   validates :title, length: { minimum: 2, maximum: 50, message: "Title must be 2 characters long min. and 50 max." }

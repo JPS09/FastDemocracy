@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 2021_12_08_124801) do
     t.bigint "voter_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "poll_id"
+    t.bigint "polls_id"
     t.index ["answer_id"], name: "index_opinions_on_answer_id"
-    t.index ["poll_id"], name: "index_opinions_on_poll_id"
+    t.index ["polls_id"], name: "index_opinions_on_polls_id"
     t.index ["question_id"], name: "index_opinions_on_question_id"
     t.index ["voter_id"], name: "index_opinions_on_voter_id"
   end
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2021_12_08_124801) do
   add_foreign_key "contact_lists", "users"
   add_foreign_key "contacts", "users"
   add_foreign_key "opinions", "answers"
-  add_foreign_key "opinions", "polls"
+  add_foreign_key "opinions", "polls", column: "polls_id"
   add_foreign_key "opinions", "questions"
   add_foreign_key "opinions", "voters"
   add_foreign_key "polls", "users"
