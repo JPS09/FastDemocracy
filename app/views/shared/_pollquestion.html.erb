@@ -14,6 +14,4 @@
     <%# the single quotes around the attribute of data-contents is actually quite important and needs to be placed, otherwise it breaks the graphs %>
     <canvas class="my-chart" data-contents='<%= sanitize contents.to_json %>' data-answers=<%= sanitize answers.to_json %>><%= pollquestion.title %></canvas>
   </div>
-
-  <%= console %>
 </div>
