@@ -4,7 +4,7 @@
   <% Answer.where(question_id: pollquestion.id).each do |answer| %>
     <% votes = Opinion.where(answer_id: answer.id) %>
     <% answers << votes.count %>
-    <% contents << answer.content %>
+    <% contents << answer.content.gsub("\'", "&#8216") %>
     <% total = Opinion.where(question_id: pollquestion.id).count %>
   <% end %>
   <div class="results-title">

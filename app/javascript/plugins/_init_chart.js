@@ -13,7 +13,7 @@ const newCharts = () => {
     if (targets) {
       targets.forEach( (target) => {
         const answersPerItem = JSON.parse(target.dataset.answers)
-        const answersContent = JSON.parse(target.dataset.contents)
+        const answersContent = JSON.parse(target.dataset.contents).map(d => d.replace(/&#8216/, "\'"));
         new Chart(target, {
           type: 'doughnut',
           data: {
